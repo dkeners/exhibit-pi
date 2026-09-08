@@ -30,9 +30,9 @@
                   video = "video-01.mp4";
                 }
               ];
-            };
 
-            syncplayServer = true;
+	      syncplayServer = true;
+            };
           };
         };
 
@@ -57,6 +57,8 @@
                   video = "video-03.mp4";
                 }
               ];
+
+	      syncplayServer = false;
             };
           };
         };
@@ -82,6 +84,8 @@
                   video = "video-05.mp4";
                 }
               ];
+
+	      syncplayServer = false;
             };
           };
         };

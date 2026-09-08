@@ -2,11 +2,10 @@
 
 {
   imports = [
-    ./modules/exhibition.nix
-    ./modules/playback.nix
-    ./modules/syncplay.nix
-
-    ./hardware/raspberry-pi-4.nix
+    ./hardware-configuration.nix
+    # ./modules/exhibition.nix
+    ./playback.nix
+    ./syncplay.nix
   ];
 
   networking.networkmanager.enable = true;
@@ -31,12 +30,12 @@
     ];
   };
 
-  systemd.sleep.extraConfig = ''
-    AllowSuspend=no
-    AllowHibernation=no
-    AllowHybridSleep=no
-    AllowSuspendThenHibernate=no
-  '';
+  systemd.sleep.settings.Sleep = {
+    AllowSuspend = false;
+    AllowHibernation = false;
+    AllowHybridSleep = false;
+    AllowSuspendThenHibernate = false;
+  };
 
   time.timeZone = "Europe/London";
 
